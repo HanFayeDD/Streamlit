@@ -17,8 +17,8 @@ import datetime
 from pyecharts.globals import CurrentConfig
 from streamlit_echarts import st_pyecharts
 import datetime
-plt.rcParams['font.sans-serif'] = ['SimHei']  # 使用黑体显示中文
-plt.rcParams['axes.unicode_minus'] = False  # 解决保存图像是负号'-'显示为方块的问题
+# plt.rcParams['font.sans-serif'] = ['SimHei']  # 使用黑体显示中文
+# plt.rcParams['axes.unicode_minus'] = False  # 解决保存图像是负号'-'显示为方块的问题
 import time
 CurrentConfig.ONLINE_HOST = "https://cdn.kesci.com/lib/pyecharts_assets/"
 import akshare as ak

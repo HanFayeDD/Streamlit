@@ -1,0 +1,6 @@
+streamlit==1.36.0
+pandas==2.0.3
+numpy<=1.25.1
+matplotlib== 3.7.2
+pyecharts==2.0.5
+streamlit-echarts==0.4.0

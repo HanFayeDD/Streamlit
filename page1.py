@@ -85,25 +85,3 @@ bar = (
 )
 
 st_pyecharts(bar)
-
-
-df_all = pd.read_csv("D:\py\数据分析\世界人口\cleaned_data_Task1.csv")
-
-list_country = ['China', 'United States', 'India', 'Japan', 'Brazil']
-x_data = list(range(1960,2022,1))
-x_data = [str(el) for el in x_data]
-print(x_data)
-line = Line()
-line.add_xaxis(x_data)
-print(len(x_data))
-plt.figure(dpi=1000)
-for el in list_country:
-    tempdf = df_all.loc[df_all['Country Name']==el]
-    y_data = tempdf.iloc[0,1:-1].astype(float).tolist()
-    print(y_data)
-    print(len(y_data))
-    line.add_yaxis(el, y_data)
-    plt.plot(x_data, y_data, label=el)
-line.set_global_opts(datazoom_opts=opts.DataZoomOpts(is_show=True),
-                     yaxis_opts=opts.AxisOpts(position="left", offset=-15))
-st_pyecharts(line, height=500)

@@ -19,7 +19,12 @@ from streamlit_echarts import st_pyecharts
 import time
 CurrentConfig.ONLINE_HOST = "https://cdn.kesci.com/lib/pyecharts_assets/"
 
-
+##字体设置
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+from matplotlib.font_manager import FontProperties
+font = FontProperties(fname=r"Deng.ttf")
+plt.rcParams['axes.unicode_minus'] = False
 
 
 
@@ -45,7 +50,7 @@ def page2():
     fig = plt.figure()
     ax = fig.add_subplot(111)
     ax.scatter([random.randint(1,100) for i in range(100)], [random.randint(1,100) for i in range(100)], c=[random.randint(1,100) for i in range(100)])
-    plt.title('matplotlib在streamlit绘制', fontsize=20)
+    plt.title('matplotlib在streamlit绘制', fontsize=20, fontproperties=font)
     st.pyplot(fig)
 
 

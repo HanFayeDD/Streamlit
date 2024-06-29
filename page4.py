@@ -17,11 +17,23 @@ import datetime
 from pyecharts.globals import CurrentConfig
 from streamlit_echarts import st_pyecharts
 import datetime
-# plt.rcParams['font.sans-serif'] = ['SimHei']  # 使用黑体显示中文
-# plt.rcParams['axes.unicode_minus'] = False  # 解决保存图像是负号'-'显示为方块的问题
+import matplotlib.pyplot as plt
+from matplotlib.font_manager import FontProperties
+font = FontProperties(fname=r"Deng.ttf")
+plt.rcParams['axes.unicode_minus'] = False
 import time
 CurrentConfig.ONLINE_HOST = "https://cdn.kesci.com/lib/pyecharts_assets/"
 import akshare as ak
+
+
+# import matplotlib as mpl
+# import matplotlib.pyplot as plt
+# from matplotlib.font_manager import FontProperties
+# font = FontProperties(fname=r"Deng.ttf")
+# plt.rcParams['axes.unicode_minus'] = False
+# plt.plot([-1,-3,3], [2,6,7])
+# plt.title('吃饭', fontproperties=font, fontsize=20)
+# plt.show()
 
 def get_df(id:str, begin_time:str, end_time:str):
     begin_time = begin_time.replace('-', '')
@@ -52,12 +64,15 @@ def draw(get_str:str, begin_time:datetime.date, end_time:datetime.date):
             st.subheader('pyplot', divider='rainbow')
             fig = plt.figure(figsize=(5, 8))
             ax = fig.add_subplot(211)
-            df.plot(x='日期', y='最高', ax=ax)
-            df.plot(x='日期', y='最低', ax=ax)
+            df.plot(x='日期', y='最高', ax=ax, label='higest')
+            df.plot(x='日期', y='最低', ax=ax, label='lowest')
+            ax.set_xlabel('datetime')
             ax = fig.add_subplot(212)
-            df.plot(x='日期', y='成交额', ax=ax)
-            df.plot(x='日期', y='成交量', ax=ax)
-            fig.suptitle(f'{begin_time} - {end_time}', fontsize=20)
+            df.plot(x='日期', y='成交额', ax=ax, label='deal_money')
+            df.plot(x='日期', y='成交量', ax=ax, label='deal_amount')
+            ax.set_xlabel('datetime')
+            plt.legend()
+            fig.suptitle(f'{begin_time} - {end_time}', fontproperties=font, fontsize=30)
             st.pyplot(fig)
             msg.toast('Success!!!', icon='😍')
         st.success('Done!', icon='😊')

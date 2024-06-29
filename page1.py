@@ -16,8 +16,6 @@ import random
 import datetime
 from pyecharts.globals import CurrentConfig
 from streamlit_echarts import st_pyecharts
-plt.rcParams['font.sans-serif'] = ['SimHei']  # 使用黑体显示中文
-plt.rcParams['axes.unicode_minus'] = False  # 解决保存图像是负号'-'显示为方块的问题
 
 CurrentConfig.ONLINE_HOST = "https://cdn.kesci.com/lib/pyecharts_assets/"
 st.title("1.try pyecharts")

@@ -117,11 +117,8 @@ pg = st.navigation([
     st.Page("page1.py", title="First page", icon="🔥"),
     st.Page(page2, title="Second page", icon="🤯"),
     st.Page(page3, title="Three page", icon="🤔"),
-    st.Page("page4.py", title="Four page", icon="🍳"),
-    st.Page("page5.py", title='try AI', icon='😊')
+    st.Page("page4.py", title="Four page", icon="🍳")
 ])
 pg.run()
 
-# st.sidebar.selectbox("Foo", ["A", "B", "C"], key="foo")
-# st.sidebar.checkbox("Bar", key="bar")
 

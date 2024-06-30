@@ -8,3 +8,4 @@ akshare==1.13.84
 transformers_stream_generator==0.0.4
 modelscope>=1.9.0
 transformers>=4.32.0
+torch==2.2.2

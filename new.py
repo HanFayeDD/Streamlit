@@ -121,6 +121,5 @@ pg = st.navigation([
 ])
 pg.run()
 
-# st.sidebar.selectbox("Foo", ["A", "B", "C"], key="foo")
-# st.sidebar.checkbox("Bar", key="bar")
+
 

@@ -64,7 +64,7 @@ def draw(get_str:str, begin_time:datetime.date, end_time:datetime.date):
             st.subheader('pyplot', divider='rainbow')
             fig = plt.figure(figsize=(5, 8))
             ax = fig.add_subplot(211)
-            df.plot(x='日期', y='最高', ax=ax, label='higest')
+            df.plot(x='日期', y='最高', ax=ax, label='highest')
             df.plot(x='日期', y='最低', ax=ax, label='lowest')
             ax.set_xlabel('datetime')
             ax = fig.add_subplot(212)
@@ -88,7 +88,7 @@ before5year = today.year - 5
 beginrange = datetime.date(before5year, 1, 1)
 endrange = datetime.date(today.year, today.month, today.day)
 d = st.date_input("输入时间区间😊😊",
-                  (datetime.date(today.year, 1, 1), datetime.date(today.year, today.month, today.day-1)),
+                  (datetime.date(today.year, 1, 1), datetime.date(today.year, today.month, today.day)),
                   beginrange,
                   endrange,
                   format="MM.DD.YYYY")

@@ -5,3 +5,4 @@ matplotlib== 3.7.2
 pyecharts==2.0.5
 streamlit-echarts==0.4.0
 akshare==1.13.84
+pygwalker==0.4.8.9

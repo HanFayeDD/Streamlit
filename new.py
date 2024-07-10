@@ -118,7 +118,9 @@ pg = st.navigation([
     st.Page(page2, title="Second page", icon="🤯"),
     st.Page(page3, title="Three page", icon="🤔"),
     st.Page("page4.py", title="Four page", icon="🍳"),
-    st.Page("page5.py", title='fifth page', icon='😀')
+    st.Page("page5.py", title='fifth page', icon='😀'),
+    st.Page("page6.py", title='sixth page', icon='🥲'),
+    st.Page("page7.py", title='seventh page', icon='🚅')
 ])
 pg.run()
 
